@@ -9,13 +9,23 @@ public class Player1Controller : MonoBehaviour
 
     Classe_NavePlayer1 Navezinha1;
 
+    
+
+
     public float velocidade;
+
+    public GameObject PrefabBala;
+    GameObject CloneBala,CloneBala2;
+
+    public GameObject Arma1, Arma2;
+
     // Start is called before the first frame update
     void Start()
     {
         Player = gameObject.GetComponent<Rigidbody>();
         Navezinha1 = new Classe_NavePlayer1(10,250,Player,180,25);
         Player1Camera = Camera.main;
+
     }
 
     // Update is called once per frame
@@ -23,7 +33,7 @@ public class Player1Controller : MonoBehaviour
     {
 
         velocidade = Player.velocity.magnitude;
-
+        
 
 
         Player1Camera.transform.position =
@@ -63,7 +73,16 @@ public class Player1Controller : MonoBehaviour
             Player.AddTorque(Player.transform.up * Navezinha1.GetTorquenave() * Time.deltaTime, ForceMode.Acceleration);
         }
 
+        if(Input.GetButtonDown("Player1Tiro"))
+        {
+            CloneBala = Instantiate(PrefabBala, Arma1.transform);
+            CloneBala.GetComponent<Classe_Tiro>().setParent(gameObject);
+            CloneBala.GetComponent<Classe_Tiro>().Move();
 
+            CloneBala2 = Instantiate(PrefabBala, Arma2.transform);
+            CloneBala2.GetComponent<Classe_Tiro>().setParent(gameObject);
+            CloneBala2.GetComponent<Classe_Tiro>().Move();
+        }
 
 
 
