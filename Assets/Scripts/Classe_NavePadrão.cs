@@ -5,10 +5,7 @@ using UnityEngine;
 public class Classe_NavePadrão 
 {
     [SerializeField]
-    float MultVelocidade, VelocidadeMaximaNave,MultTorque,VelocidadeDesaceleração,MuniçãoMaxima,MuniçãoAtual;
-
-    [SerializeField]
-    float GasolinaMaximaNave, GasolinaAtual;
+    float MultVelocidade, VelocidadeMaximaNave,MultTorque,VelocidadeDesaceleração;
 
     [SerializeField]
     Rigidbody NaveBody;
@@ -101,81 +98,6 @@ public class Classe_NavePadrão
     public void AddVelocidadeMax(float AddVelocidadeMax)
     {
         VelocidadeMaximaNave += AddVelocidadeMax;
-    }
-
-    //muda o valor maximo de munição da nave
-    public void SetMuniçãoMaxima(float NovaMuniçãoMax)
-    {
-        MuniçãoMaxima = NovaMuniçãoMax;
-    }
-
-    //retorna o valod da munição maxima da nave
-    public float GetMuniçãoMaxima()
-    {
-        return MuniçãoMaxima;
-    }
-
-    //adiciona/diminui o valor da munição maxima da nave
-    public void AddMuniçãoMaxima(float NovaMuniçãoMaxima)
-    {
-        MuniçãoMaxima += NovaMuniçãoMaxima;
-    }
-
-
-
-    //muda o valor da munição da nave
-    public void SetMuniçãoNave(float NovaMunição)
-    {
-        MuniçãoAtual = NovaMunição;
-    }
-
-    //retorna o valod da munição da nave
-    public float GetMuniçãoNave()
-    {
-        return MuniçãoAtual;
-    }
-
-    //adiciona/diminui o valor da munição da nave
-    public void AddMuniçãoNave(float NovaMunição)
-    {
-        MuniçãoAtual += NovaMunição;
-    }
-
-    //muda o valor da GasolinaMaxima da nave
-    public void SetGasolinaMaxima(float NovaGasosaMax)
-    {
-        GasolinaMaximaNave = NovaGasosaMax;
-    }
-
-    //retorna o valor da Gasolina Maxima da nave
-    public float GetGasolinaMaxima()
-    {
-        return GasolinaMaximaNave;
-    }
-
-    //adiciona/diminui o valor da Gasolina Maxima da nave
-    public void AddGasolinaMax(float NovaGasolinaMaxima)
-    {
-        GasolinaMaximaNave += NovaGasolinaMaxima;
-    }
-
-
-    //muda o valor da Gasolina da nave
-    public void SetGasolinaNave(float NovaGasosa)
-    {
-        GasolinaAtual = NovaGasosa;
-    }
-
-    //retorna o valor da Gasolina Maxima da nave
-    public float GetGasolinaNave()
-    {
-        return GasolinaAtual;
-    }
-
-    //adiciona/diminui o valor da Gasolina Maxima da nave
-    public void AddGasolinaNave(float NovaGasosa)
-    {
-        GasolinaAtual += NovaGasosa;
     }
 
 
